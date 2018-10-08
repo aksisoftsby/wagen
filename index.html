@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Phone Blast</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <textarea class="template" style="width: 90%; height: 100px;">Halo permisi kak, Mohon maaf mengganggu waktunya. perkenalkan saya Doni - tim promo dari *EventMedia.id*
+Kami dapat kontak kakak dari poster event di sosial media.
+Barang kali kakak mau nih untuk *pasang Banner Event* di Website kita, nanti sekalian kita publish juga di FB, Twitter dan IG *EventMedia.id* kita. Gratis kak, Terima kasih</textarea>
+            <br />
+            <textarea class="nomor" style="width: 90%; height: 100px;" placeholder="Nomor dipisahkan Baris baru"></textarea>
+            <br />
+            <input onclick="oncrot();" type="submit" style="width: 50px; height: 10px" value="Bikin bro!" />
+        </div>
+        <textarea id="HasilBro" style="width: 90%; height: 100px;"></textarea>
+        <script type="text/javascript">
+            function oncrot() {
+                var Templates = document.getElementsByClassName('template')[0].value;
+                var Nomor = document.getElementsByClassName('nomor')[0].value;
+                var NMS = Nomor.split("\n");
+                var tekss = '';
+                for (f = 0; f < NMS.length; f++) {
+                    // console.log(NMS[f]);
+                    tekss += 'http://wa.me/' + NMS[f] + '?text=' + escape(Templates) + "\n";
+                }
+                document.getElementById('HasilBro').innerHTML = tekss;
+            }
+        </script>
+    </body>
+</html>
