@@ -27,9 +27,11 @@ Barang kali kakak mau nih untuk *pasang Banner Event* di Website kita, nanti sek
                 var Nomor = document.getElementsByClassName('nomor')[0].value;
                 var NMS = Nomor.split("\n");
                 var tekss = '';
+                var numm = 1;
                 for (f = 0; f < NMS.length; f++) {
                     // console.log(NMS[f]);
-                    tekss += 'http://wa.me/' + NMS[f] + '?text=' + escape(Templates) + "\n";
+                    tekss += numm + '. http://wa.me/' + NMS[f] + '?text=' + escape(Templates) + "\n";
+                    numm++;
                 }
                 document.getElementById('HasilBro').innerHTML = tekss;
             }
